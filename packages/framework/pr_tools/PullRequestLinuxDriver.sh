@@ -8,6 +8,7 @@ source ${SCRIPTPATH:?}/common.bash
 on_weaver=$(echo "$@" | grep '\-\-on_weaver' &> /dev/null && echo "1")
 on_ats2=$(echo "$@" | grep '\-\-on_ats2' &> /dev/null && echo "1")
 bootstrap=$(echo "$@" | grep '\-\-\no\-bootstrap' &> /dev/null && echo "0" || echo "1")
+on_cts1=$(echo "$@" | grep '\-\-on_cts1' &> /dev/null && echo "1")
 
 # Configure ccache via environment variables
 function configure_ccache() {
@@ -44,8 +45,12 @@ function bootstrap_modules() {
         module load git/2.10.1
         module load python/3.7.3
         get_python_packages pip3
-
-        module list
+        export PYTHON_EXE=python3
+    elif [[ ${on_cts1} == "1" ]]; then
+        module load aue/git/2.38.1
+        module load aue/python/3.9.16
+        get_python_packages pip3
+        export PYTHON_EXE=python3
     else
         source /projects/sems/modulefiles/utils/sems-archive-modules-init.sh
         execute_command_checked "module unload sems-archive-git"
