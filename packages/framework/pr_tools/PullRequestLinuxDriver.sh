@@ -47,6 +47,7 @@ function bootstrap_modules() {
         get_python_packages pip3
         export PYTHON_EXE=python3
     elif [[ ${on_cts1} == "1" ]]; then
+        module load aue/cmake/3.26.2
         module load aue/git/2.38.1
         module load aue/python/3.9.16
         get_python_packages pip3
