@@ -46,12 +46,16 @@ function bootstrap_modules() {
         module load python/3.7.3
         get_python_packages pip3
         export PYTHON_EXE=python3
+
+        module list
     elif [[ ${on_cts1} == "1" ]]; then
         module load sems-cmake/3.21.1
         module load aue/git/2.38.1
         module load aue/python/3.9.16
         get_python_packages pip3
         export PYTHON_EXE=python3
+
+        module list
     else
         source /projects/sems/modulefiles/utils/sems-archive-modules-init.sh
         execute_command_checked "module unload sems-archive-git"
