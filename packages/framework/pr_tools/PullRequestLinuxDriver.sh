@@ -49,7 +49,7 @@ function bootstrap_modules() {
 
         module list
     elif [[ ${on_cts1} == "1" ]]; then
-        module load sems-cmake
+        module load cmake
         module load aue/git/2.38.1
         module load aue/python/3.9.16
         get_python_packages pip3
