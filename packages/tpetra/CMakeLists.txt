@@ -24,7 +24,7 @@ TRIBITS_ADD_OPTION_AND_DEFINE(
 # Supported Kokkos version in Trilinos
 # NOTE: When we snapshot Kokkos into Trilinos, we have to update these numbers to maintain
 # compatibility with external Kokkos
-SET(Tpetra_SUPPORTED_KOKKOS_VERSION "4.0.1")
+SET(Tpetra_SUPPORTED_KOKKOS_VERSION "4.1.00")
 
 
 # Option to allow developers to ignore incompatible Kokkos versions
@@ -1265,7 +1265,6 @@ TRIBITS_PACKAGE_DEF()
 #
 # Identify what files to exclude when making a source tarball.
 #
-TRIBITS_EXCLUDE_AUTOTOOLS_FILES()
 
 TRIBITS_EXCLUDE_FILES(
   core/doc/CodingGuidelines
