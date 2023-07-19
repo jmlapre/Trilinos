@@ -152,7 +152,7 @@ then
     message_std "PRDriver> " ""
     message_std "PRDriver> " "Driver or Merge script change detected. Re-launching PR Driver"
     message_std "PRDriver> " ""
-    ${REPO_ROOT:?}/packages/framework/pr_tools/PullRequestLinuxDriver.sh
+    ${REPO_ROOT:?}/packages/framework/pr_tools/PullRequestLinuxDriver.sh ${@:1}
     exit $?
 fi
 
